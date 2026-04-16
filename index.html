@@ -172,6 +172,52 @@
     display: flex;
     flex-direction: column;
   }
+  /* Live badge for projects with links */
+  .project-card.has-link .project-live-badge {
+    display: flex;
+  }
+
+  .project-live-badge {
+    display: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    align-items: center;
+    gap: 5px;
+    background: rgba(199,113,78,0.1);
+    border: 1px solid var(--terracotta);
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .project-live-badge:hover {
+    background: var(--terracotta);
+    color: #fff;
+  }
+
+  .project-live-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    animation: pulse 1.5s infinite;
+  }
+
+  .project-live-badge:hover::before {
+    background: #fff;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
 
   .contact-label {
     font-size: 11px;
